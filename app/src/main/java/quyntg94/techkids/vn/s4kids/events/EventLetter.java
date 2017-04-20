@@ -7,7 +7,6 @@ import quyntg94.techkids.vn.s4kids.models.Letter;
  */
 
 public class EventLetter {
-
     private Letter letter;
 
     public EventLetter(Letter letter) {

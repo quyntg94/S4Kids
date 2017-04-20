@@ -19,6 +19,7 @@ public class LearningViewHolder extends ViewHolder{
 
     TextView tvLetter;
 
+    //setting UI của recycle view
     public LearningViewHolder(View itemView) {
         super(itemView);
         tvLetter = (TextView) itemView.findViewById(R.id.tv_letter);
@@ -26,7 +27,7 @@ public class LearningViewHolder extends ViewHolder{
 
     public void setLetter(Letter letter){
         tvLetter.setText(letter.getName());
-        itemView.setTag(letter);
+        itemView.setTag(letter); //set tag cho từng view
 
     }
 }

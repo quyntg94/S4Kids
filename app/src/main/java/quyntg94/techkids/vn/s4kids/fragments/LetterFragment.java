@@ -56,7 +56,7 @@ public class LetterFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_letter, container, false);
-        EventBus.getDefault().register(this);
+        EventBus.getDefault().register(this); //đăng ký nhận data được gửi từ learning fragment
         setupUI(view);
         return view;
     }

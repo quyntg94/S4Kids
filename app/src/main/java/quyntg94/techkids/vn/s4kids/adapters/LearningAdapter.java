@@ -21,9 +21,9 @@ import quyntg94.techkids.vn.s4kids.viewholders.LearningViewHolder;
 public class LearningAdapter extends RecyclerView.Adapter<LearningViewHolder>{
 
     private KidsDatabase kidsDatabase = KidApplication.getInstance().getKidsDatabase();
-    private List<Letter> letterList = kidsDatabase.loadAllLetter();
+    private List<Letter> letterList = kidsDatabase.loadAllLetter(); //lấy hết data ra và lưu vào 1 list
 
-
+    //khai báo hàm onclick cho recycleview
     private View.OnClickListener onItemClickListener;
 
     public void setOnItemClickListener(View.OnClickListener onItemClickListener) {
@@ -38,6 +38,7 @@ public class LearningAdapter extends RecyclerView.Adapter<LearningViewHolder>{
 
     @Override
     public LearningViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        //set UI cho từng view nhỏ trong recycleview (item)
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View itemView =  layoutInflater.inflate(R.layout.item_learning, parent, false);
         return new LearningViewHolder(itemView);
@@ -45,13 +46,13 @@ public class LearningAdapter extends RecyclerView.Adapter<LearningViewHolder>{
 
     @Override
     public void onBindViewHolder(LearningViewHolder holder, int position) {
-
-        holder.itemView.setOnClickListener(onItemClickListener);
-        holder.setLetter(letterList.get(position));
+        holder.itemView.setOnClickListener(onItemClickListener); //set onclick cho từng view
+        holder.setLetter(letterList.get(position)); //set data cho từng view
     }
 
     @Override
     public int getItemCount() {
+        //set số lượng view theo số lương item trong list đã load
         return letterList.size();
     }
 

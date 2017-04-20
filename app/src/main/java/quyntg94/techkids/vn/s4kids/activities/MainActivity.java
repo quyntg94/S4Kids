@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
         changeFragment(new MainFragment(), true, null);
     }
 
+    //Chuyển fragment có đưa vào stack
     public void changeFragment(Fragment fragment, boolean addToBackstack, String tag) {
+        //đưa fragment vào thay cho frame layout có id fl_container
         FragmentTransaction fragmentTransaction = getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fl_container, fragment);
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    //xử lý nút Back khi ở màn hình chính
     @Override
     public void onBackPressed() {
         int count = getSupportFragmentManager().getBackStackEntryCount();

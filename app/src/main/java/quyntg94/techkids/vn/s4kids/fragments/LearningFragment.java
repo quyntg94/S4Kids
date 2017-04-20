@@ -43,6 +43,7 @@ public class LearningFragment extends Fragment implements View.OnClickListener{
     }
 
     private void setupUI() {
+        //set kiểu hiển thị của recycle view
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         rvLetter.setLayoutManager(layoutManager);
@@ -51,6 +52,7 @@ public class LearningFragment extends Fragment implements View.OnClickListener{
     }
 
     private void loadData() {
+        //set data cho recycle view
         learningAdapter = new LearningAdapter();
         learningAdapter.setOnItemClickListener(this);
         rvLetter.setAdapter(learningAdapter);
@@ -59,11 +61,12 @@ public class LearningFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        letter = (Letter) v.getTag();
-        EventBus.getDefault().postSticky(new EventLetter(letter));
+        letter = (Letter) v.getTag(); //gắn view theo tag
+        EventBus.getDefault().postSticky(new EventLetter(letter)); //Chuyển 1 object letter sang 1 màn hình khác
         changeFragment(new LetterFragment());
     }
 
+    //chuyển fragment với không đưa vào stack
     public void changeFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager()
                 .beginTransaction()
