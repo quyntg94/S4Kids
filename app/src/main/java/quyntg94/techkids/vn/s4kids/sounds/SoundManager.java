@@ -18,7 +18,7 @@ import quyntg94.techkids.vn.s4kids.models.Letter;
 
 public class SoundManager {
 
-    public static int NUMBER_OF_NOTE = 85;
+    public static int NUMBER_OF_NOTE = 97;
     public static SoundPool soundPool = new SoundPool(NUMBER_OF_NOTE, AudioManager.STREAM_MUSIC, 0);
 
     public static ArrayList<Integer> soundList = new ArrayList<>();
@@ -110,13 +110,32 @@ public class SoundManager {
         listSoundID.put("Cái Ô", 73);
         listSoundID.put("Ô Tô", 74);
         listSoundID.put("Bơ", 75);
+        listSoundID.put("Cái Nơ", 76);
+        listSoundID.put("Tô Phở", 77);
+        listSoundID.put("Đèn Pin", 78);
+        listSoundID.put("Hộp Quà", 79);
+        listSoundID.put("Cái Quạt", 80);
+        listSoundID.put("Bó Rau", 81);
+        listSoundID.put("Con Rắn", 82);
         listSoundID.put("Sư Tử", 83);
         listSoundID.put("Con Sâu", 84);
+        listSoundID.put("Quả Táo", 85);
+        listSoundID.put("Cái Tủ", 86);
+        listSoundID.put("Đu Đủ", 87);
+        listSoundID.put("Xe Lu", 88);
+        listSoundID.put("Hộp Thư", 89);
+        listSoundID.put("Lọ Mực", 90);
+        listSoundID.put("Vải Thiều", 91);
+        listSoundID.put("Con Voi", 92);
+        listSoundID.put("Xe Đạp", 93);
+        listSoundID.put("Cái Xẻng", 94);
+        listSoundID.put("Chim Yến", 95);
+        listSoundID.put("Hoa Ly", 96);
 
     }
 
 
     public static void playSound(String string){
-        soundPool.play(soundList.get(listSoundID.get(string)), 2.0f, 2.0f, 1, 0, 1.0f);
+        soundPool.play(soundList.get(listSoundID.get(string)), 5.0f, 5.0f, 1, 0, 1.0f);
     }
 }
