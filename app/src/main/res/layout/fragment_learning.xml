@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorSecond"
     android:orientation="vertical"
-    tools:context="quyntg94.techkids.vn.s4kids.fragments.LearningFragment">
+    tools:context="quyntg94.techkids.vn.s4kids.fragments.subScreen.LearningFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout

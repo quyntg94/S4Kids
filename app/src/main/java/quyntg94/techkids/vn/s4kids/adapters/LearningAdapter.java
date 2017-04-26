@@ -1,7 +1,6 @@
 package quyntg94.techkids.vn.s4kids.adapters;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,7 @@ import java.util.List;
 
 import quyntg94.techkids.vn.s4kids.R;
 import quyntg94.techkids.vn.s4kids.applications.KidApplication;
-import quyntg94.techkids.vn.s4kids.databases.KidsDatabase;
+import quyntg94.techkids.vn.s4kids.databases.KidsDatabases;
 import quyntg94.techkids.vn.s4kids.models.Letter;
 import quyntg94.techkids.vn.s4kids.viewholders.LearningViewHolder;
 
@@ -20,8 +19,8 @@ import quyntg94.techkids.vn.s4kids.viewholders.LearningViewHolder;
 
 public class LearningAdapter extends RecyclerView.Adapter<LearningViewHolder>{
 
-    private KidsDatabase kidsDatabase = KidApplication.getInstance().getKidsDatabase();
-    private List<Letter> letterList = kidsDatabase.loadAllLetter(); //lấy hết data ra và lưu vào 1 list
+    private KidsDatabases kidsDatabases = KidApplication.getInstance().getKidsDatabases();
+    private List<Letter> letterList = kidsDatabases.loadAllLetter(); //lấy hết data ra và lưu vào 1 list
 
     //khai báo hàm onclick cho recycleview
     private View.OnClickListener onItemClickListener;

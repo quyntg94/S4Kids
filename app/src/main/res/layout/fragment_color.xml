@@ -1,18 +1,107 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorSecond"
-    android:gravity="center"
-    tools:context="quyntg94.techkids.vn.s4kids.fragments.ColorFragment">
+    android:orientation="vertical"
+    tools:context="quyntg94.techkids.vn.s4kids.fragments.subScreen.ColorFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:text="Chức năng này đang được xây dựng"
-        android:textSize="40sp"
-        android:textColor="#FFFFFF"
-        android:textAlignment="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_color_game_test"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_red"
+                android:padding="15dp"
+                android:src="@color/red"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_yellow"
+                android:padding="15dp"
+                android:src="@color/yellow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_gray"
+                android:padding="15dp"
+                android:src="@color/gray"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_cyan"
+                android:padding="15dp"
+                android:src="@color/colorPrimary"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_black"
+                android:padding="15dp"
+                android:src="@color/black"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_white"
+                android:padding="15dp"
+                android:src="@color/white"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_blue"
+                android:padding="15dp"
+                android:src="@color/blue"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_green"
+                android:padding="15dp"
+                android:src="@color/green"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_reset"
+            android:text="Khôi Phục"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

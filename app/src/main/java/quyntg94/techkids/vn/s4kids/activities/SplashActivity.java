@@ -24,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         //load list nhạc từ app ra
-
+        SoundManager.loadNumberInfoList(this);
         ivLogo = (ImageView) findViewById(R.id.iv_logo);
         pbTime = (ProgressBar) findViewById(R.id.pb_time);
         //animation từ từ hiện ra (alpha) với ảnh ở màn hình splash
@@ -37,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
         s = 0;
         pbTime.setProgress(s);
         pbTime.setMax(3);
-        CountDownTimer countDownTimer = new CountDownTimer(3000, 1000) {
+        CountDownTimer countDownTimer = new CountDownTimer(4000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 s += 1;
@@ -50,7 +50,7 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                SoundManager.loadSoundInfoList(getBaseContext());
+                SoundManager.loadLetterInfoList(getBaseContext());
                 Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorSecond"
     android:gravity="center"
-    tools:context="quyntg94.techkids.vn.s4kids.fragments.RankingFragment">
+    tools:context="quyntg94.techkids.vn.s4kids.fragments.subScreen.RankingFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

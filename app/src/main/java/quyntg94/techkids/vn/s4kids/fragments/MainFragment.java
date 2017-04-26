@@ -10,6 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import quyntg94.techkids.vn.s4kids.R;
+import quyntg94.techkids.vn.s4kids.fragments.subScreen.ColorFragment;
+import quyntg94.techkids.vn.s4kids.fragments.subScreen.GamingFragment;
+import quyntg94.techkids.vn.s4kids.fragments.subScreen.LearningFragment;
+import quyntg94.techkids.vn.s4kids.fragments.subScreen.RankingFragment;
 
 /**
  * A simple {@link Fragment} subclass.
