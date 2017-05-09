@@ -30,6 +30,8 @@ public class KidsDatabases extends SQLiteAssetHelper {
     private static final String KID_SOUND1 = "sound1";
     private static final String KID_SOUND2 = "sound2";
     private static final String KID_CHECK = "isCheck";
+    private static final String KID_ID = "id";
+    private static final String KID_SUBNAME = "subName";
 
 
 
@@ -42,7 +44,9 @@ public class KidsDatabases extends SQLiteAssetHelper {
             KID_SOUND,
             KID_SOUND1,
             KID_SOUND2,
-            KID_CHECK
+            KID_CHECK,
+            KID_ID,
+            KID_SUBNAME
     };
 
     public KidsDatabases(Context context) {
@@ -69,10 +73,45 @@ public class KidsDatabases extends SQLiteAssetHelper {
             String sound1 = cursor.getString(cursor.getColumnIndex(KID_SOUND1));
             String sound2 = cursor.getString(cursor.getColumnIndex(KID_SOUND2));
             boolean isCheck = cursor.getInt(cursor.getColumnIndex(KID_CHECK)) != 0;
+            int id = cursor.getInt(cursor.getColumnIndex(KID_ID));
+            String subName = cursor.getString(cursor.getColumnIndex(KID_SUBNAME));
 
-            Letter letter = new Letter(name, image1, image2, letter1, letter2, sound, sound1, sound2, isCheck);
+            Letter letter = new Letter(name, image1, image2, letter1, letter2, sound, sound1, sound2, isCheck, id, subName);
             letters.add(letter);
 
+
+        }
+        return letters;
+    }
+
+    public List<Letter> loadOnlyLetter(){
+
+        List<Letter> letters = new ArrayList<>();
+        //get readable database
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+
+        //query ==> cursor
+        Cursor cursor = sqLiteDatabase.query("tbl_letter", KID_ALL_COLUMNS, null, null, null, null, null);
+
+        //go through row
+        while (cursor.moveToNext()){
+            String name = cursor.getString(cursor.getColumnIndex(KID_NAME));
+            String image1 = cursor.getString(cursor.getColumnIndex(KID_IMAGE1));
+            String image2 = cursor.getString(cursor.getColumnIndex(KID_IMAGE2));
+            String letter1 = cursor.getString(cursor.getColumnIndex(KID_LETTER1));
+            String letter2 = cursor.getString(cursor.getColumnIndex(KID_LETTER2));
+            String sound = cursor.getString(cursor.getColumnIndex(KID_SOUND));
+            String sound1 = cursor.getString(cursor.getColumnIndex(KID_SOUND1));
+            String sound2 = cursor.getString(cursor.getColumnIndex(KID_SOUND2));
+            boolean isCheck = cursor.getInt(cursor.getColumnIndex(KID_CHECK)) != 0;
+            int id = cursor.getInt(cursor.getColumnIndex(KID_ID));
+            String subName = cursor.getString(cursor.getColumnIndex(KID_SUBNAME));
+
+            Letter letter = new Letter(name, image1, image2, letter1, letter2, sound, sound1, sound2, isCheck, id, subName);
+            if(!isCheck) {
+                letters.add(letter);
+                Log.d("fuck2", letter.toString() + "/n");
+            }
 
         }
         return letters;

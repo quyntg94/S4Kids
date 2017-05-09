@@ -29,4 +29,12 @@ public class Color {
     public void setSound(String sound) {
         this.sound = sound;
     }
+
+    @Override
+    public String toString() {
+        return "Color{" +
+                "name='" + name + '\'' +
+                ", sound='" + sound + '\'' +
+                '}';
+    }
 }

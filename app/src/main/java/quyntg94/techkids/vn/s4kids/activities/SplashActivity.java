@@ -36,7 +36,7 @@ public class SplashActivity extends AppCompatActivity {
         //đồng hồ đếm ngược
         s = 0;
         pbTime.setProgress(s);
-        pbTime.setMax(3);
+        pbTime.setMax(4);
         CountDownTimer countDownTimer = new CountDownTimer(4000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {

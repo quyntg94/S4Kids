@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import quyntg94.techkids.vn.s4kids.R;
 import quyntg94.techkids.vn.s4kids.fragments.gamingScreen.ColorGameFragment;
@@ -19,9 +20,9 @@ import quyntg94.techkids.vn.s4kids.fragments.gamingScreen.NumberGameFragment;
  */
 public class GamingFragment extends Fragment {
 
-    private ImageView ivLetterGame;
-    private ImageView ivNumberGame;
-    private ImageView ivColorGame;
+    private RelativeLayout ivLetterGame;
+    private RelativeLayout ivNumberGame;
+    private RelativeLayout ivColorGame;
 
     public GamingFragment() {
         // Required empty public constructor
@@ -38,9 +39,9 @@ public class GamingFragment extends Fragment {
     }
 
     private void setupUI(View view) {
-        ivLetterGame = (ImageView) view.findViewById(R.id.iv_game_letter);
-        ivNumberGame = (ImageView) view.findViewById(R.id.iv_game_number);
-        ivColorGame = (ImageView) view.findViewById(R.id.iv_game_color);
+        ivLetterGame = (RelativeLayout) view.findViewById(R.id.iv_game_letter);
+        ivNumberGame = (RelativeLayout) view.findViewById(R.id.iv_game_number);
+        ivColorGame = (RelativeLayout) view.findViewById(R.id.iv_game_color);
 
         setOnClickListener();
     }

@@ -1,6 +1,7 @@
 package quyntg94.techkids.vn.s4kids.fragments.subScreen;
 
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -9,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -24,6 +26,7 @@ import quyntg94.techkids.vn.s4kids.sounds.SoundManager;
  */
 public class LearningFragment extends Fragment implements View.OnClickListener{
 
+    private ProgressDialog progressDialog;
     private LearningAdapter learningAdapter;
     private RecyclerView rvLetter;
     private Letter letter;
@@ -38,16 +41,16 @@ public class LearningFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_learning, container, false);
-        SoundManager.loadAlphabetInfoList(getContext());
         rvLetter = (RecyclerView) view.findViewById(R.id.rv_letter);
         setupUI();
         return view;
     }
 
     private void setupUI() {
+        SoundManager.loadAlphabetInfoList(getContext());
         //set kiểu hiển thị của recycle view
         LinearLayoutManager layoutManager
-                = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+                = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         rvLetter.setLayoutManager(layoutManager);
 
         loadData();
@@ -65,7 +68,9 @@ public class LearningFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         letter = (Letter) v.getTag(); //gắn view theo tag
         EventBus.getDefault().postSticky(new EventLetter(letter)); //Chuyển 1 object letter sang 1 màn hình khác
+
         changeFragment(new LetterFragment());
+
     }
 
     //chuyển fragment với không đưa vào stack

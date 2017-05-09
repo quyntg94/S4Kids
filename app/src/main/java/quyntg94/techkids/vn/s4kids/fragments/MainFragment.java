@@ -4,6 +4,7 @@ package quyntg94.techkids.vn.s4kids.fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,11 @@ public class MainFragment extends Fragment {
     private ImageView ivScreen3;
     private ImageView ivScreen4;
 
+    private CardView cvScreen1;
+    private CardView cvScreen2;
+    private CardView cvScreen3;
+    private CardView cvScreen4;
+
     public MainFragment() {
         // Required empty public constructor
     }
@@ -42,10 +48,15 @@ public class MainFragment extends Fragment {
     }
 
     private void setupUI(View view) {
+        cvScreen1 = (CardView) view.findViewById(R.id.cv_screen_1);
+        cvScreen2 = (CardView) view.findViewById(R.id.cv_screen_2);
+        cvScreen3 = (CardView) view.findViewById(R.id.cv_screen_3);
+//        cvScreen4 = (CardView) view.findViewById(R.id.cv_screen_4);
+
         ivScreen1 = (ImageView) view.findViewById(R.id.iv_screen_1);
         ivScreen2 = (ImageView) view.findViewById(R.id.iv_screen_2);
         ivScreen3 = (ImageView) view.findViewById(R.id.iv_screen_3);
-        ivScreen4 = (ImageView) view.findViewById(R.id.iv_screen_4);
+//        ivScreen4 = (ImageView) view.findViewById(R.id.iv_screen_4);
 
     }
 
@@ -68,12 +79,37 @@ public class MainFragment extends Fragment {
                 changeFragment(new ColorFragment(), true, null);
             }
         });
-        ivScreen4.setOnClickListener(new View.OnClickListener() {
+//        ivScreen4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                changeFragment(new RankingFragment(), true, null);
+//            }
+//        });
+
+        cvScreen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeFragment(new RankingFragment(), true, null);
+                changeFragment(new LearningFragment(), true, null);
             }
         });
+        cvScreen2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeFragment(new GamingFragment(), true, null);
+            }
+        });
+        cvScreen3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeFragment(new ColorFragment(), true, null);
+            }
+        });
+//        cvScreen4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                changeFragment(new RankingFragment(), true, null);
+//            }
+//        });
     }
 
 

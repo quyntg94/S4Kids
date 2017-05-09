@@ -2,6 +2,7 @@ package quyntg94.techkids.vn.s4kids.fragments.learningScreen;
 
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,13 +32,14 @@ public class LetterFragment extends Fragment {
     private ImageView ivSound;
     private ImageView ivSound1;
     private ImageView ivSound2;
+    private boolean check = false;
 
     public LetterFragment() {
         // Required empty public constructor
     }
 
     @Subscribe(sticky = true)
-    public void receiveInfo(EventLetter event){
+    public void receiveInfo(EventLetter event) {
         this.letter = event.getLetter();
     }
 
@@ -65,7 +67,7 @@ public class LetterFragment extends Fragment {
     }
 
     private void loadData() {
-        tvName.setText(letter.getName());
+        tvName.setText(letter.getSubName());
         int image1 = getContext().getResources().getIdentifier("img_" + letter.getImage1(), "drawable", getContext().getPackageName());
         int image2 = getContext().getResources().getIdentifier("img_" + letter.getImage2(), "drawable", getContext().getPackageName());
         ivImage1.setImageResource(image1);
@@ -73,14 +75,25 @@ public class LetterFragment extends Fragment {
         tvLetter1.setText(letter.getLetter1());
         tvLetter2.setText(letter.getLetter2());
 
+        setOnClickListeners();
+
+    }
+
+    private void setOnClickListeners() {
+        ivSound.setClickable(true);
+        ivSound1.setClickable(true);
+        ivSound2.setClickable(true);
+
         ivSound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(letter.isCheck()){
+                if (letter.isCheck()) {
                     SoundManager.playNumber(letter.getName());
 
-                } else
+                } else {
                     SoundManager.playAlphabet(letter.getName());
+                }
+                unlockClick(ivSound);
 
             }
         });
@@ -88,26 +101,49 @@ public class LetterFragment extends Fragment {
         ivSound1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(letter.isCheck()){
+                if (letter.isCheck()) {
                     SoundManager.playNumber(letter.getLetter1());
 
-                } else
+                } else {
                     SoundManager.playLetter(letter.getLetter1());
-
+                }
+                unlockClick(ivSound1);
             }
         });
 
         ivSound2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(letter.isCheck()){
+                if (letter.isCheck()) {
                     SoundManager.playNumber(letter.getLetter2());
 
-                } else
+                } else {
                     SoundManager.playLetter(letter.getLetter2());
-
+                }
+                unlockClick(ivSound2);
             }
         });
+
     }
 
+    private void lockClick(ImageView imageview) {
+
+        imageview.setClickable(false);
+    }
+
+    private void unlockClick(ImageView imageView) {
+        lockClick(imageView);
+        CountDownTimer countDownTimer = new CountDownTimer(1000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                setOnClickListeners();
+            }
+        };
+        countDownTimer.start();
+    }
 }

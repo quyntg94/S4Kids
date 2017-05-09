@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSecond"
+    tools:context="quyntg94.techkids.vn.s4kids.fragments.resultsScreen.ColorResultFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tv_color_name"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="Game màu sắc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_color_result"
+        android:layout_centerInParent="true"
+        android:textSize="30sp"
+        android:text="Thời Gian: 69 ph"
+        android:layout_below="@+id/tv_color_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

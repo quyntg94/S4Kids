@@ -11,37 +11,51 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <com.makeramen.roundedimageview.RoundedImageView
+    <RelativeLayout
         android:id="@+id/iv_game_letter"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:scaleType="centerCrop"
-        android:src="@drawable/linh"
-        android:layout_marginBottom="20dp"
-        app:riv_corner_radius="20dip">
-
-    </com.makeramen.roundedimageview.RoundedImageView>
-    <com.makeramen.roundedimageview.RoundedImageView
+        android:background="@color/white"
+        android:layout_marginBottom="20dp">
+        <TextView
+            android:text="Trò chơi với chữ cái"
+            android:textSize="30sp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
         android:id="@+id/iv_game_number"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:scaleType="centerCrop"
-        android:src="@drawable/linh"
-        android:layout_marginBottom="20dp"
-        app:riv_corner_radius="20dip">
+        android:background="@color/white"
+        android:layout_marginBottom="20dp">
+        <TextView
+            android:text="Trò chơi với chữ số"
+            android:textSize="30sp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
 
-    </com.makeramen.roundedimageview.RoundedImageView>
-    <com.makeramen.roundedimageview.RoundedImageView
+    <RelativeLayout
         android:id="@+id/iv_game_color"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scaleType="centerCrop"
-        android:src="@drawable/linh"
         android:layout_marginBottom="20dp"
-        app:riv_corner_radius="20dip">
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:scaleType="centerCrop">
 
-    </com.makeramen.roundedimageview.RoundedImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Trò chơi với màu sắc"
+            android:textSize="30sp" />
+    </RelativeLayout>
 </LinearLayout>

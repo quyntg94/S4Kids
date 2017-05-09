@@ -14,7 +14,7 @@ import java.util.HashMap;
 public class SoundManager {
 
     public static int NUMBER_OF_ALPHABET = 29;
-    public static int NUMBER_OF_LETTER = 29;
+    public static int NUMBER_OF_LETTER = 58;
     public static int NUMBER_OF_COLOR = 8;
     public static int NUMBER_OF_NUMBER = 30;
 

@@ -14,8 +14,10 @@ public class Letter {
     private String sound1;
     private String sound2;
     private boolean isCheck;
+    private int id;
+    private String subName;
 
-    public Letter(String name, String image1, String image2, String letter1, String letter2, String sound, String sound1, String sound2, boolean isCheck) {
+    public Letter(String name, String image1, String image2, String letter1, String letter2, String sound, String sound1, String sound2, boolean isCheck, int id, String subName) {
         this.name = name;
         this.image1 = image1;
         this.image2 = image2;
@@ -25,6 +27,8 @@ public class Letter {
         this.sound1 = sound1;
         this.sound2 = sound2;
         this.isCheck = isCheck;
+        this.id = id;
+        this.subName = subName;
     }
 
     public String getName() {
@@ -97,5 +101,38 @@ public class Letter {
 
     public void setCheck(boolean check) {
         isCheck = check;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getSubName() {
+        return subName;
+    }
+
+    public void setSubName(String subName) {
+        this.subName = subName;
+    }
+
+    @Override
+    public String toString() {
+        return "Letter{" +
+                "name='" + name + '\'' +
+                ", image1='" + image1 + '\'' +
+                ", image2='" + image2 + '\'' +
+                ", letter1='" + letter1 + '\'' +
+                ", letter2='" + letter2 + '\'' +
+                ", sound='" + sound + '\'' +
+                ", sound1='" + sound1 + '\'' +
+                ", sound2='" + sound2 + '\'' +
+                ", isCheck=" + isCheck +
+                ", id=" + id +
+                ", subName='" + subName + '\'' +
+                '}';
     }
 }
