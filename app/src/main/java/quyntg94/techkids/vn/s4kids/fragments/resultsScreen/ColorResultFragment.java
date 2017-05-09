@@ -39,7 +39,7 @@ public class ColorResultFragment extends Fragment {
         if(!EventBus.getDefault().isRegistered(this)){
             EventBus.getDefault().register(this);
         }
-        tvColorResult = (TextView) view.findViewById(R.id.tv_color_name);
+        tvColorResult = (TextView) view.findViewById(R.id.tv_color_result);
         tvColorResult.setText("Thời gian: " + time);
         return view;
     }

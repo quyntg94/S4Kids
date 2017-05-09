@@ -494,7 +494,7 @@ public class NumberGameFragment extends Fragment {
 
             @Override
             public void onFinish() {
-                if(number == 9){
+                if(number == 10){
                     EventBus.getDefault().postSticky(new EventTime(chrNumberTime.getText().toString()));
                     Log.d("gg", chrNumberTime.getText().toString());
                     chrNumberTime.stop();

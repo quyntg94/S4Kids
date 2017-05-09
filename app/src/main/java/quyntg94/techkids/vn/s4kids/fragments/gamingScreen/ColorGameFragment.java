@@ -71,6 +71,7 @@ public class ColorGameFragment extends Fragment {
     private RelativeLayout rlAnswerColorC;
     private RelativeLayout rlAnswerColorD;
 
+    private TextView tvChoice;
     private ImageView ivAnswerSoundA;
     private ImageView ivAnswerSoundB;
     private ImageView ivAnswerSoundC;
@@ -112,12 +113,14 @@ public class ColorGameFragment extends Fragment {
         ivAnswerSoundB = (ImageView) view.findViewById(R.id.iv_answer_sound_B);
         ivAnswerSoundC = (ImageView) view.findViewById(R.id.iv_answer_sound_C);
         ivAnswerSoundD = (ImageView) view.findViewById(R.id.iv_answer_sound_D);
-
+        tvChoice = (TextView) view.findViewById(R.id.tv_choice);
         lockAnswer();
 
     }
 
     private void setupQuestion(){
+        choice = 2;
+        tvChoice.setText("Số lần lựa chọn: " + choice);
         chTimeColor.start();
         Log.d("ahihi", String.valueOf(chTimeColor.getText()));
         number++;
@@ -291,6 +294,7 @@ public class ColorGameFragment extends Fragment {
     }
 
     public void setOnClickListeners(int roll){
+        tvChoice.setText("Số lần lựa chọn: " + choice);
 
         switch (roll){
             case 1:
@@ -300,6 +304,7 @@ public class ColorGameFragment extends Fragment {
                         ivAnswerColorA.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_green));
                         lockAnswerWithoutChoice();
                         nextQuestionWithoutChoice();
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                     }
                 });
                 ivAnswerColorB.setOnClickListener(new View.OnClickListener() {
@@ -307,6 +312,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorB.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_red));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswer();
                         ivAnswerColorB.setClickable(false);
                         nextQuestion();
@@ -317,6 +323,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorC.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_red));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswer();
                         ivAnswerColorC.setClickable(false);
                         nextQuestion();
@@ -327,6 +334,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorD.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_red));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswer();
                         ivAnswerColorD.setClickable(false);
                         nextQuestion();
@@ -339,6 +347,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorA.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_red));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswer();
                         ivAnswerColorA.setClickable(false);
                         nextQuestion();
@@ -348,6 +357,8 @@ public class ColorGameFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         ivAnswerColorB.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_green));
+                        choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswerWithoutChoice();
                         nextQuestionWithoutChoice();
                     }
@@ -357,6 +368,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorC.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_red));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswer();
                         ivAnswerColorC.setClickable(false);
                         nextQuestion();
@@ -367,6 +379,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorD.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_red));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswer();
                         ivAnswerColorD.setClickable(false);
                         nextQuestion();
@@ -379,6 +392,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorA.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_red));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswer();
                         ivAnswerColorA.setClickable(false);
                         nextQuestion();
@@ -389,6 +403,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorB.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_red));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswer();
                         ivAnswerColorB.setClickable(false);
                         nextQuestion();
@@ -399,6 +414,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorC.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_green));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswerWithoutChoice();
                         nextQuestionWithoutChoice();
                     }
@@ -408,6 +424,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorD.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_red));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswer();
                         ivAnswerColorD.setClickable(false);
                         nextQuestion();
@@ -420,6 +437,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorA.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_red));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswer();
                         ivAnswerColorA.setClickable(false);
                         nextQuestion();
@@ -430,6 +448,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorB.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_red));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswer();
                         ivAnswerColorB.setClickable(false);
                         nextQuestion();
@@ -440,6 +459,7 @@ public class ColorGameFragment extends Fragment {
                     public void onClick(View v) {
                         ivAnswerColorC.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_red));
                         choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswer();
                         ivAnswerColorC.setClickable(false);
                         nextQuestion();
@@ -449,6 +469,8 @@ public class ColorGameFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         ivAnswerColorD.setImageDrawable(getResources().getDrawable(R.drawable.custom_view_circular_green));
+                        choice--;
+                        tvChoice.setText("Số lần lựa chọn: " + choice);
                         lockAnswerWithoutChoice();
                         nextQuestionWithoutChoice();
                     }
@@ -456,6 +478,7 @@ public class ColorGameFragment extends Fragment {
                 break;
             default:
         }
+
 
     }
 
@@ -499,7 +522,7 @@ public class ColorGameFragment extends Fragment {
 
                 @Override
                 public void onFinish() {
-                    if(number == 9){
+                    if(number == 10){
                         EventBus.getDefault().postSticky(new EventTime(chTimeColor.getText().toString()));
                         Log.d("gg", chTimeColor.getText().toString());
                         chTimeColor.stop();
@@ -528,7 +551,7 @@ public class ColorGameFragment extends Fragment {
 
             @Override
             public void onFinish() {
-                if(number == 9){
+                if(number == 10){
                     EventBus.getDefault().postSticky(new EventTime(chTimeColor.getText().toString()));
                     Log.d("gg", chTimeColor.getText().toString());
                     chTimeColor.stop();

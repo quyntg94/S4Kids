@@ -39,7 +39,7 @@ public class LetterResultFragment extends Fragment {
         if(!EventBus.getDefault().isRegistered(this)){
             EventBus.getDefault().register(this);
         }
-        tvLetterResult = (TextView) view.findViewById(R.id.tv_letter_name);
+        tvLetterResult = (TextView) view.findViewById(R.id.tv_letter_result);
         tvLetterResult.setText("Thời gian: " + time);
         return view;
     }

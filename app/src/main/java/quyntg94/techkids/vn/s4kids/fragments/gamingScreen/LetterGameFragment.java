@@ -1054,7 +1054,7 @@ public class LetterGameFragment extends Fragment {
 
             @Override
             public void onFinish() {
-                if (number == 9) {
+                if (number == 10) {
                     EventBus.getDefault().postSticky(new EventTime(chrLetterGame.getText().toString()));
                     Log.d("gg", chrLetterGame.getText().toString());
                     chrLetterGame.stop();
